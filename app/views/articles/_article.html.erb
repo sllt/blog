@@ -1,0 +1,22 @@
+<% info ||= false %>
+<% link_more ||= false %>
+<% root ||= false %>
+<div class="conteudo">
+  <div class="post-info">
+    <% if info %>
+      <%= "Posted by #{info}" %>
+    <% end %>
+  </div>
+  <h1><%= article.title %></h1>
+  <hr>
+  <p>
+    <% if root %>
+      <%= markdown truncate(article.content, length: 180) %>
+    <% else %>
+      <%= markdown article.content %>
+    <% end %>
+  </p>
+  <% if link_more %>
+    <%= link_to "Read more →", article_path(article) %>
+  <% end %>
+</div>

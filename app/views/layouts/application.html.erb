@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="http://lab.lepture.com/editor/editor.css" />
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>
+  <script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render "shared/header" %>
+  <div class="wrap">
+    <%= render "shared/menu" %>
+    <%= render "shared/sidebar" %>
+    <%= yield %>
+    <%= yield :javascript %>
+  </div>
+</body>
+</html>
